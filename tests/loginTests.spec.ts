@@ -13,3 +13,4 @@ test("User can successfully login to the main page with valid credentials", asyn
     const inventoryPage: InventoryPage = await loginPage.logIn("standard_user", "secret_sauce");
     await expect(inventoryPage.spanProducts).toHaveText("Products");
 })
+
