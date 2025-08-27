@@ -1,14 +1,17 @@
 import { Locator, Page } from "@playwright/test";
 import { ProductModel } from "../models/ProductModel";
+import { ProductSort } from "../enums/ProductSort";
 
 export class InventoryPage{
     private page: Page;
     
     public readonly spanProducts: Locator;
+    private readonly sortDropdown: Locator;
 
     constructor(page: Page){
         this.page = page;
-        this.spanProducts= this.page.locator(".title");
+        this.spanProducts = this.page.locator(".title");
+        this.sortDropdown = page.locator('select.product_sort_container');
     }
 
       async getAllProducts(): Promise<ProductModel[]> {
@@ -31,5 +34,9 @@ export class InventoryPage{
         }
 
         return products;
-  }
+    }
+
+    async sortProducts(sortOption: ProductSort) {
+    await this.sortDropdown.selectOption(sortOption);
+    }
 } 
