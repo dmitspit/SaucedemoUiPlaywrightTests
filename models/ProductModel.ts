@@ -1,10 +1,7 @@
 import { Locator } from "@playwright/test";
+import { BaseProductModel } from "./BaseProductModel";
 
-export class ProductModel{
-    public name: string;
-    public description: string;
-    public price: string;
-    public addToCartButton: Locator;
-    public image: Locator;
-    public addToCartBtn: Locator
+export class ProductModel extends BaseProductModel {
+  public image: Locator;
+  public addToCartBtn: Locator;
 }
