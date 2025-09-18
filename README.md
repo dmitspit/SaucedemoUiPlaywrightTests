@@ -13,6 +13,7 @@ It follows modern test architecture principles, including the Page Object Model 
 - **TypeScript** – Strongly typed language for robust test code.
 - **Page Object Model** – Encapsulates page interactions for reusability.
 - **GitHub Copilot** – Used for educational purposes and experimentation with AI-assisted coding.
+- **Playwright MCP** – Enables AI-powered test generation and iteration via custom prompts.
 
 ## Project Structure
 
