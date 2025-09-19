@@ -1,23 +1,9 @@
-import { test, expect } from "@playwright/test";
-import { LoginPage } from "../pages/LoginPage";
-import { InventoryPage } from "../pages/InventoryPage";
-import users from "../test-data/users.json";
+import { test, expect } from "../fixtures/test-options";
 import { ProductModel } from "../models/ProductModel";
 import { CartPage } from "../pages/CartPage";
 import { CartModel } from "../models/CartModel";
 
-let inventoryPage: InventoryPage;
-
-test.beforeEach(async ({ page }) => {
-  const loginPage: LoginPage = new LoginPage(page);
-  await loginPage.goToLoginPage();
-  inventoryPage = await loginPage.logIn(
-    users.standardUser.username,
-    users.standardUser.password
-  );
-});
-
-test("User can add product to the cart", async ({ page }) => {
+test("User can add product to the cart", async ({ page, inventoryPage }) => {
   const products: ProductModel[] = await inventoryPage.getAllProducts();
   expect(products).toHaveLength(6);
 
