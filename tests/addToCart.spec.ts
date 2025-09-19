@@ -3,7 +3,10 @@ import { ProductModel } from "../models/ProductModel";
 import { CartPage } from "../pages/CartPage";
 import { CartModel } from "../models/CartModel";
 
-test("User can add product to the cart", async ({ page, inventoryPage }) => {
+test("User can add product to the cart @smoke @regression", async ({
+  page,
+  inventoryPage,
+}) => {
   const products: ProductModel[] = await inventoryPage.getAllProducts();
   expect(products).toHaveLength(6);
 
