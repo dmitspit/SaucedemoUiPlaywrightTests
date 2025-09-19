@@ -11,7 +11,7 @@ test.describe.parallel("Login Page Tests", () => {
     await loginPage.goToLoginPage();
   });
 
-  test("User can successfully login to the main page with valid credentials", async ({
+  test("User can successfully login to the main page with valid credentials @smoke", async ({
     page,
   }) => {
     const inventoryPage: InventoryPage = await loginPage.logIn(
@@ -21,7 +21,9 @@ test.describe.parallel("Login Page Tests", () => {
     await expect(inventoryPage.spanProducts).toHaveText("Products");
   });
 
-  test("User sees error message if hi is locked", async ({ page }) => {
+  test("User sees error message if hi is locked @regression", async ({
+    page,
+  }) => {
     const errorMsg = await loginPage.logInExpectError(
       users.lockedUser.username,
       users.lockedUser.password

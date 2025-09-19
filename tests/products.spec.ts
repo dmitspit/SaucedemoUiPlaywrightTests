@@ -3,7 +3,7 @@ import { ProductModel } from "../models/ProductModel";
 import { ProductSort } from "../enums/ProductSort";
 
 test.describe("Inventory Page Tests", () => {
-  test("Products should be present on Inventory page", async ({
+  test("Products should be present on Inventory page, @smoke @regression", async ({
     page,
     inventoryPage,
   }) => {
@@ -20,7 +20,7 @@ test.describe("Inventory Page Tests", () => {
     }
   });
 
-  test("User can sort products by price (low to high)", async ({
+  test("User can sort products by price (low to high), @regression", async ({
     page,
     inventoryPage,
   }) => {
