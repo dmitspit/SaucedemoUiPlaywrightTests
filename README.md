@@ -54,6 +54,45 @@ Replace `@smoke` with any tag used in your tests (e.g., `@regression`).
 
 This allows targeted test runs for faster feedback and focused validation.
 
+
+## Running Playwright Tests in Docker
+
+### 1. Requirements
+To run tests in Docker, you need:
+
+- **WSL 2** (Windows Subsystem for Linux) or any Linux environment
+- **Docker Engine** installed in Linux/WSL
+- Cloned project repository with the tests
+
+### 2. Commands to Run Tests
+In the terminal, execute:
+
+1. Navigate to the project root:
+   ```bash
+   cd path/to/project
+   ```
+
+2. Build the Docker image and start the container with tests:
+   ```bash
+   docker compose up --build
+   ```
+
+3. To run tests using the existing image without rebuilding:
+   ```bash
+   docker compose up
+   ```
+
+4. To stop the tests:
+   ```bash
+   docker compose down
+   ```
+
+Test Report Location:
+After the run, check your results here:
+```
+./playwright-report/index.html
+```
+
 ## Notes
 
 All tests are atomic and business-readable.

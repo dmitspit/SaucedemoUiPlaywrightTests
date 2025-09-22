@@ -9,8 +9,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    //baseURL: "https://www.saucedemo.com",
-    headless: false,
+    headless: true,
     trace: "on-first-retry",
   },
   projects: [
@@ -19,6 +18,7 @@ export default defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         baseURL: "https://www.saucedemo.com",
+        headless: true,
       },
     },
     {
